@@ -8,7 +8,7 @@ export default function() {
     return {
       cars,
       meta: { total: db.cars.length }
-    }
+    };
   });
 
   this.post('/cars');
