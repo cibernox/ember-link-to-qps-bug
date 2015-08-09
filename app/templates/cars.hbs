@@ -1,0 +1,21 @@
+<h2>List of cars</h2>
+{{link-to 'Add new car' 'cars.create'}}
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |car|}}
+      <tr>
+        <td>{{car.brand}}</td>
+        <td>{{car.model}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{pagination-links total=numberOfPages page=page}}
+
+{{outlet}}

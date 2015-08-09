@@ -1,0 +1,14 @@
+{{#if showPagination}}
+  {{#unless (eq page 1)}}
+    <li class="first-page">{{#link-to (query-params page=1)}}&lt;&lt;{{/link-to}}</li>
+    <li class="previous-page">{{#link-to (query-params page=pages.firstObject)}}&lt;{{/link-to}}</li>
+  {{/unless}}
+  {{#each pages as |p|}}
+    <li class={{if (eq p page) 'active'}}>{{#link-to (query-params page=p)}}{{p}}{{/link-to}}</li>
+  {{/each}}
+  {{#unless (eq page pages.lastObject)}}
+    <li class="next-page">{{#link-to (query-params page=pages.lastObject)}}&gt;{{/link-to}}</li>
+    <li class="last-page">{{#link-to (query-params page=lastPage)}}&gt;&gt;{{/link-to}}</li>
+  {{/unless}}
+{{/if}}
+
